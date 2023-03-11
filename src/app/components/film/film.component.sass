@@ -1,0 +1,43 @@
+.film
+    width: 300px
+    &__banner
+        background: red
+        height: 70px
+        border-radius: 10px 10px 0 0
+    &__body
+        background-color: #1D1E1F
+        color: #fff
+        display: flex
+        flex-direction: column
+        gap: 10px
+        padding: 10px
+    &__characters
+        cursor: pointer
+        &:hover
+            color: #fff9b8
+.notch-contain
+    position: relative
+    &::before
+        content: ""
+        display: block
+        position: absolute
+        border-top: 14px solid #1D1E1F
+        border-right: 14px solid transparent
+        z-index: -2
+        bottom: 0
+        top: 0
+        left: 0
+        width: 50%    
+        box-sizing: border-box
+    &::after
+        content: ""
+        z-index: -2
+        box-sizing: border-box
+        right: 0
+        border-left: 14px solid transparent
+        width: 25%
+        bottom: 0
+        top: 0
+        border-top: 14px solid #1D1E1F
+        display: block
+        position: absolute

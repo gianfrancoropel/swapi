@@ -1,0 +1,22 @@
+<div class="film">
+    <div class="film__banner"></div>
+    <div class="film__body">
+        <h5 class="film__title">
+            {{film.title}}
+        </h5>
+        <p class="film__episode">
+            episode nro {{film.episode_id}}
+        </p>
+        <p class="film__director">
+            director {{film.director}}
+        </p>
+        <!-- popUp con todos los personajes -->
+        <a (click)="goToPagePepoples(film)" class="film__characters">
+            Ir a personajes de la pelicula
+        </a>
+    </div>
+    <div class="film__popUp">
+
+    </div>
+    <div class="notch-contain"></div>
+</div>

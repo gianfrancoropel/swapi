@@ -1,0 +1,159 @@
+.head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media (min-width: 1024px)
+        border-bottom: 1px solid #fff
+    @media (max-width:1024px)
+        flex-direction: column-reverse
+        align-items: center
+        gap: 20px
+    &__title
+        color: #fff
+        line-height: 40px
+        font-size: 24px
+        padding: 20px 20px
+        text-align: center
+        margin: 20px 0
+        @media (min-width: 1024px)
+            padding: 0
+            margin: 0
+            text-align: left
+    &__filter
+        width: 30px
+        height: 30px
+        background: transparent
+        cursor: pointer
+        img
+            filter: invert(1)
+.peoples
+    display: flex
+    flex-wrap: wrap
+    gap: 43px
+    min-height: 100vh
+    padding: 10px
+    @media (max-width:920px)
+        justify-content: space-around
+        text-align: center
+.people 
+    width: 100px
+    &__banner 
+        height: 90px
+        background: rgb(2,0,36)
+        border-radius: 11px
+        border-bottom: 2px solid
+        position: relative
+        cursor: pointer
+        &:hover
+            .people__hair,
+            .people__eye 
+                opacity: 1
+    &__body 
+        margin-top: 5px
+        color: #fff
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__hair 
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 14px
+        border-radius: 10px 10px 0 0
+        opacity: 0.5
+    &__eye 
+        position: absolute
+        top: 24px
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        left: 12px
+        opacity: 0.5
+        &:last-child 
+            right: 12px
+            left: inherit
+.loading
+    color: #fff
+    padding: 30px
+    text-align: center
+
+//List element
+.filters
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    display: none
+    z-index:1
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    gap: 11px
+    &__active
+        display: flex
+    &__container
+        &-list
+            display: flex
+            justify-content: space-around
+            background: orange
+            height: 450px
+            width: 450px
+            border-radius: 10px
+            padding: 10px
+        &-btns
+            display: flex
+            justify-content: space-around
+            margin-top: 10px
+    &__list
+        width: 170px
+        list-style-type: none
+        display: flex
+        flex-direction: column
+        color: #fff
+        font-weight: bold
+        font-size: 1.1em
+        position: relative
+        border: 1px solid #901c1c
+        border-radius: 5px
+        padding: 0
+        cursor: pointer
+        max-height: 400px
+        overflow-y: auto     
+        &:not(.open) li:not(:first-of-type)
+            display: none
+        &.open
+            box-shadow: 5px 18px 15px -3px rgb(0 0 0 / 10%)          
+        &::-webkit-scrollbar
+            width: 10px
+            &-track
+                -webkit-box-shadow: inset 0 0 6px #ff3d3d
+            &-thumb
+                background-color: #811f1f
+                outline: 1px solid black
+                border-radius: 10px
+    &__item 
+        background-color: #901c1c
+        padding: 20px 20px
+        &:not(:first-child) 
+            position: relative
+        &:not(:first-child)::before 
+            content: ""
+            position: absolute
+            top: 0px
+            left: 5px
+            width: 90%
+            height: 1px
+            background-color: rgb(255, 255, 255)
+    &__btn
+        cursor: pointer
+        border: none
+        background: yellow
+        padding: 10px
+        color: #000
+        font-weight: bold
+    &__title
+        border-bottom: 1px solid
+        line-height: 30px
+        margin: 5px 0

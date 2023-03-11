@@ -1,0 +1,62 @@
+<div *ngIf="loading">
+    <p class="loading">
+        LOADING...🛸
+    </p>
+</div>
+<div class="head">
+    <p class="head__title">
+        Peoples - {{film.title}}
+    </p>
+    <button  (click)="filters.classList.toggle('filters__active')" class="head__filter" type="button">
+        <img src="/assets/images/filter.png" width="100%" alt="">
+    </button>
+</div>
+<div class="peoples">
+    <div *ngFor="let people of peoplesFilter.results" class="people">
+        <div class="people__banner" [ngStyle]="{'border-bottom-color': people.skin_color}">
+            <span class="people__hair" [ngStyle]="{'background-color': people.hair_color}"></span>
+            <span class="people__eye" [ngStyle]="{'background-color': people.eye_color}"></span>
+            <span class="people__eye" [ngStyle]="{'background-color': people.eye_color}"></span>
+        </div>
+        <div class="people__body">
+            <h5 class="people__name">
+                {{ people.name }}
+            </h5>
+            <p class="people__text">
+                {{ people.eye_color }}
+            </p>
+            <p class="people__text">
+                {{ people.gender }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div #filters class="filters">
+    <div class="filters__container">
+        <div class="filters__container-list">
+            <div class="filters__eye-color">
+                <h3 class="filters__title">
+                    Eye colors
+                </h3>
+                <ul #eye id="eye" class="filters__list">
+                    <li *ngFor="let color of listColorEyes"
+                    class="filters__item">{{color}}</li>
+                </ul>
+            </div>
+            <div class="filters__hair-color">
+                <h3 class="filters__title">
+                    Hair colors
+                </h3>
+                <ul id="hair" class="filters__list">
+                    <li *ngFor="let color of listColorHair"
+                    class="filters__item">{{color}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="filters__container-btns">
+            <button class="filters__btn" (click)="filters.classList.toggle('filters__active')" type="button">Ver resultados</button>
+            <button class="filters__btn" (click)="removeFilters()" type="button">Remove all filters</button>
+        </div>
+    </div>
+</div>
